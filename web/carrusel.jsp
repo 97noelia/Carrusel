@@ -4,6 +4,7 @@
     Author     : Noelia
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!doctype html>
@@ -23,15 +24,16 @@
 
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/09/16132351/Martina-Gebert_Dancingyeah_00004348.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://cnnespanol2.files.wordpress.com/2019/12/mejores-imagenes-del-ancc83o-noticias-2019-galeria10.jpg?quality=100&strip=info&w=320&h=240&crop=1" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://www.xlsemanal.com/wp-content/uploads/sites/3/2019/12/las-mejores-fotografias.jpg" class="d-block w-100" alt="...">
-                </div>
+                <%ArrayList<String> imagenes = (ArrayList<String>) request.getAttribute("imagenes");
+                    for (int i = 0; i < imagenes.size(); i++) {
+                        String cadenaActive = "";
+                        if(i==0){
+                            cadenaActive="active";
+                    }%>
+                        <div class="carousel-item <%=cadenaActive%>">
+                            <img src=<%=imagenes.get(i)%> class="d-block w-100" alt="...">
+                        </div>
+                <%}%>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

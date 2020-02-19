@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href='carrusel.jsp'>Iniciar</a>
+        <a href='carrusel'>Iniciar</a>
     </body>
 </html>

@@ -27,7 +27,7 @@ public class Utilidades {
         if (ficheros != null) {
             for (int x = 0; x < ficheros.length; x++) {
                 if(ficheros[x].endsWith(".jpg") || ficheros[x].endsWith(".png") || ficheros[x].endsWith(".gif")){
-                    archivos.add(ficheros[x]);
+                    archivos.add("carrusel" + File.separator + ficheros[x]);
                 }
             }
         }
